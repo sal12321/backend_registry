@@ -116,7 +116,7 @@ const startServer = async () => {
 };
 
 app.get("/api/testMongo", async (req, res) => {
-  console.log("fuck")
+ 
     try {
         const mongoose = require("mongoose");
 
