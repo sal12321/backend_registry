@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-console.log("MONGO URI loaded:", process.env.MONGO_URI);
+console.log("MONGO URI loaded:");
 
 
 
