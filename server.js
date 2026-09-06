@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-console.log("MONGO URI loaded:");
+// console.log("MONGO URI loaded:");
 
 
 
