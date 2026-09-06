@@ -138,7 +138,8 @@ app.get("/api/testMongo", async (req, res) => {
 
 app.get("/api/test", ()=>{
     res.json({
-        "message" : "hey this is /api/test api"
+        "message" : "hey this is /api/test api",
+        "update" :  "this is simply an update 2.0"
     })
 })
 
