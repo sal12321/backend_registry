@@ -136,5 +136,11 @@ app.get("/api/testMongo", async (req, res) => {
     }
 });
 
+app.get("/api/test", ()=>{
+    res.json({
+        "message" : "hey this is /api/test api"
+    })
+})
+
 
 startServer();
