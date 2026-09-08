@@ -1,9 +1,4 @@
 require("dotenv").config();
-
-
-
-
-
 const express = require("express");
 const cors = require("cors");
 
@@ -21,7 +16,7 @@ const app = express();
 const port = process.env.PORT || 8080;
 
 
-app.use(cors());
+app.use(cors());    
 app.use(express.json());
 
 
@@ -70,14 +65,19 @@ app.post("/api/addUser", async (req, res) => {
 });
 
 
-// Update user
 app.put("/api/updateUser", async (req, res) => {
     try {
         const user = await updateUser(req.body);
 
+        if (!user) {
+            return res.status(404).json({
+                message: "User not found"
+            });
+        }
+
         res.status(200).json({
             message: "User updated successfully",
-            user: user
+            user
         });
 
     } catch (error) {
@@ -86,8 +86,6 @@ app.put("/api/updateUser", async (req, res) => {
         });
     }
 });
-
-
 // Delete user
 app.delete("/api/deleteUser/:email", async (req, res) => {
     try {

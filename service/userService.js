@@ -5,12 +5,20 @@ const addUser = async (user) => {
 };
 
 const updateUser = async (user) => {
-    return await User.findByIdAndUpdate(
-        user.id,
-        user,
-        { new: true }
-    );
+
+
+    console.log();
+
+   return await User.findOneAndUpdate(
+    { email: user.email }, // find OLD document
+    user,
+    { new: true }
+);
+
+
 };
+
+
 
 const getAll = async () => {
     return await User.find({});
